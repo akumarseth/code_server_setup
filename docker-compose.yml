@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  code-server:
+    image: codercom/code-server:latest
+    container_name: code-server
+    environment:
+      - PASSWORD=Admin@123
+    volumes:
+      - ./config:/config
+      - .:/home/coder/workspace
+    ports:
+      - 8080:8080
+    restart: unless-stopped
